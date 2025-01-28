@@ -1,33 +1,27 @@
-import Image from 'next/image';
-import React from 'react';
+  import Image from 'next/image';
+  import React from 'react';
 
-const Hero = () => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center p-4 md:p-8">
-      <div>
-        <h2 className="text-[40px] md:text-[60px] font-bold">
-          Premium Car Rental in Your Area
-        </h2>
-        <h2 className="text-[20px] text-gray-500 pr-0 md:pr-20 mt-5">
-          Book the selected car effortlessly. Pay for driving only. Book the car now.
-        </h2>
-        <button className="p-2 mt-5 bg-blue-500 text-white px-4 rounded-full hover:scale-105 transition-all">
-          Explore Cars
-        </button>
+  const Hero = () => {
+    return (
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div className="space-y-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Premium Car Rental in Your Area</h1>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-lg">
+            Book the selected car effortlessly. Pay for driving only. Book the car now.
+          </p>
+          <button className="bg-blue-500 text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 transition-colors duration-300 hover:scale-105 transform">
+            Explore Cars
+          </button>
+        </div>
+
+        <div className="hero__image-container">
+          <div className="hero__image">
+            <Image src="/hero.png" alt="hero" fill className="object-contain" />
+          </div>
+          <div className="hero__image-overlay " />
+        </div>
       </div>
+    );
+  };
 
-      <div className="relative w-full h-[400px] bg-[url('/hero-bg.png')] bg-contain bg-no-repeat bg-center flex justify-start ">
-        <Image
-          src="/hero.png"
-          alt="Luxury car available for rental"
-          width={600}
-          height={600}
-          style={{ objectFit: 'contain' }}
-          priority
-        />
-      </div>
-    </div>
-  );
-};
-
-export default Hero;
+  export default Hero;

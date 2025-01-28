@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider, SignedIn, SignedOut, SignIn } from "@clerk/nextjs";
 import NavBar from "@/components/NavBar";
+import { shadesOfPurple } from "@clerk/themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +36,11 @@ export default function RootLayout({
         {children}
         </SignedIn>
         <SignedOut>
-          <SignIn/>
+          <div className="flex justify-center items-center h-screen">
+          <SignIn appearance={{
+            baseTheme:shadesOfPurple,
+          }}/>
+          </div>
         </SignedOut>
       </body>
     </html>

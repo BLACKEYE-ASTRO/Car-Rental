@@ -12,7 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        'hero-bg': "url('/hero-bg.png')"
+      }
     },
   },
-  plugins: [],
+  plugins: [require('daisyui'),],
 } satisfies Config;
